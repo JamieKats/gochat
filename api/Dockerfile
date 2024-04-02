@@ -1,4 +1,5 @@
-FROM golang:1.22.1-bookworm
+# FROM golang:1.22.1-bookworm
+FROM mcr.microsoft.com/devcontainers/go:1-1.22-bookworm
 
 # Working directory
 WORKDIR /app

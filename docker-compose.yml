@@ -1,21 +1,21 @@
 version: '3.8'
 
 services:
-  # web:
-  #   build: ./nginx
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - api
-  # api:
-  #   build:
-  #     context: ./api
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     # Mount the root folder that contains .git
-  #     - .:/workspace
-  #   ports:
-  #     - "8080:8080"
+  web:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace
+    ports:
+      - "8080:8080"
   frontend:
     build:
       context: ./frontend
