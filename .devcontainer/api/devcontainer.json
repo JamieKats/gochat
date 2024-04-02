@@ -1,6 +1,6 @@
 {
-	"name": "Go-api",
-	"dockerComposeFile": "../../docker-compose.yml",
+	"name": "Golang-api",
+	"dockerComposeFile": ["../../docker-compose.yml", "../../docker-compose.devcontainer.yml"],
 	"service": "api",
 	"shutdownAction": "none", // If close vscode keep container running
 	"workspaceFolder": "/workspace/api"

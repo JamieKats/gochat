@@ -1,25 +1,29 @@
 version: '3.8'
 
 services:
-  web:
-    build: ./nginx
-    ports:
-      - "80:80"
-    depends_on:
-      - api
-  api:
-    image: golang:1.22.1-bookworm
-    volumes:
-      # Mount the root folder that contains .git
-      - .:/workspace:cached
-    ports:
-      - "8080:8080"
+  # web:
+  #   build: ./nginx
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - api
+  # api:
+  #   build:
+  #     context: ./api
+  #     dockerfile: Dockerfile
+  #   volumes:
+  #     # Mount the root folder that contains .git
+  #     - .:/workspace
+  #   ports:
+  #     - "8080:8080"
   frontend:
-    image: node:20.12-bookworm
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     volumes:
       # Mount the root folder that contains .git
-      - .:/workspace:cached
+      - .:/workspace
     ports:
       - "3000:3000"
-    depends_on:
-      - api
+    # depends_on:
+    #   - api

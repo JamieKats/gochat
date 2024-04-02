@@ -1,5 +1,4 @@
-# Official Golang image (You shouldn't use the `latest` version in production but I'm a bad guy)
-FROM golang:latest
+FROM golang:1.22.1-bookworm
 
 # Working directory
 WORKDIR /app
