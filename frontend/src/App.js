@@ -10,7 +10,7 @@ import { ChakraProvider, Box } from '@chakra-ui/react'
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 import Landing from "./Components/Landing";
-import ErrorPage from './Components/error-page';
+import ErrorPage from './Components/ErrorPage';
 import Rooms from './routes/rooms';
 
 const router = createBrowserRouter([
@@ -33,10 +33,10 @@ function App() {
       <Box textAlign="right">
         <ColorModeSwitcher justifySelf="flex-end" />
       </Box>
-    <Box textAlign="center" fontSize="xl">
-      <RouterProvider router={router}>
-      </RouterProvider>
-    </Box>
+      <Box textAlign="center" fontSize="xl">
+        <RouterProvider router={router}>
+        </RouterProvider>
+      </Box>
     </ChakraProvider>
   );
 }

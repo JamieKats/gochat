@@ -4,6 +4,19 @@ import { Box, Button, Container, Stack, Text } from '@chakra-ui/react';
 import { EditIcon, ArrowForwardIcon } from '@chakra-ui/icons';
 import Rooms from '../routes/rooms';
 
+var roomsInfo = [
+    {
+      roomId: 1,
+      roomName: "Secret Rooms",
+      roomSize: 12,
+    },
+    {
+      roomId: 3,
+      roomName: "Chads",
+      roomSize: 69,
+    },
+];
+
 function Landing() {
     return (
       <Container maxW="2xl" marginTop="3rem" centerContent>
@@ -14,30 +27,19 @@ function Landing() {
         </Box>
         <Box>
           <Stack direction="row" spacing={7}>
-            <Link to="register">
-              <Button
-                size="lg"
-                leftIcon={<EditIcon />}
-                colorScheme="green"
-                variant="solid"
-              >
-                Register
-              </Button>
-            </Link>
-            <Link to="login">
-              <Button
-                size="lg"
-                rightIcon={<ArrowForwardIcon />}
-                colorScheme="green"
-                variant="outline"
-              >
-                Login
-              </Button>
-            </Link>
+            
+            <Button
+              size="lg"
+              leftIcon={<EditIcon />}
+              colorScheme="green"
+              variant="solid"
+            >
+              Select Name
+            </Button>
           </Stack>
-          <Box>
-            {}
-          </Box>
+          {/* <Box> */}
+            <Rooms roomsInfo={roomsInfo}/>
+          {/* </Box> */}
         </Box>
       </Container>
     );
