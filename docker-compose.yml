@@ -18,12 +18,12 @@ services:
       - "8080:8080"
   frontend:
     build:
-      context: ./frontend
+      context: ./frontend-NICEGUI
       dockerfile: Dockerfile
     volumes:
       # Mount the root folder that contains .git
       - .:/workspace
-    ports:
-      - "3000:3000"
+    # ports:
+    #   - "3000:3000"
     # depends_on:
     #   - api

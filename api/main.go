@@ -13,12 +13,13 @@ func init() {
 	err := godotenv.Load(".env")
 
 	if err != nil {
-		log.Fatal("Error loading .env file.", err)
+		my_logger := log.Default()
+		my_logger.Println("Error loading .env file.", err)
 	}
 }
 
 func main() {
-	port := flag.Int("port", 1234, "Port server listens on.")
+	port := flag.Int("port", 8080, "Port server listens on.")
 
 	httpserver.StartHttpServer(*port)
 }

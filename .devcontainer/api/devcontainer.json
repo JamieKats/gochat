@@ -3,7 +3,7 @@
 	"dockerComposeFile": ["../../docker-compose.yml", "../../docker-compose.devcontainer.yml"],
 	"service": "api",
 	"shutdownAction": "none", // If close vscode keep container running
-	"workspaceFolder": "/workspace/api"
+	"workspaceFolder": "/workspace/api",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -18,5 +18,5 @@
 	// "postCreateCommand": "go version",
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+	"remoteUser": "root"
 }
